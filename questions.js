@@ -69,3 +69,11 @@ else{
     third="hub";
 }
 console.log(`Business name is ${first} ${second} ${third}`);
+/*question-04=>calculate the factorial of a number using for loops
+*/
+let i=prompt("enter the number?");let factorial=1;
+while(i!=0){
+    factorial=factorial * i;
+    i--;
+}
+console.log("factorial of the number is ",factorial);
