@@ -71,9 +71,26 @@ else{
 console.log(`Business name is ${first} ${second} ${third}`);
 /*question-04=>calculate the factorial of a number using for loops
 */
-let i=prompt("enter the number?");let factorial=1;
+let i=prompt("enter the number?");let fact=1;
 while(i!=0){
-    factorial=factorial * i;
+    fact=fact * i;
     i--;
 }
-console.log("factorial of the number is ",factorial);
+console.log("factorial of the number is ",fact);
+//by using reduce method
+let num=3;
+// function factorial(number){
+//     let arr=Array.from(Array(number).keys());
+//     console.log(arr);
+// }->this gives array from 0 to 2
+function factorial(number){
+    let arr=Array.from(Array(number+1).keys());
+    console.log(arr.slice(1,));
+    let c=arr.slice(1,).reduce(
+        (a,b)=>{
+            return a*b;
+        }
+    )
+    console.log(c);
+}
+factorial(num);
