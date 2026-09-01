@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assign random color</title>
+    <style>
+        .container{
+            display:flex;
+            gap: 25px;
+            padding: 20px;
+        }
+        .box{
+            height: 200px;
+            width:200px;
+            border:2px solid blue;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+    </div>
+    <script>
+        function getRandomColor(){
+            let val1=Math.ceil(0+Math.random()*255);
+            let val2=Math.ceil(0+Math.random()*255);
+            let val3=Math.ceil(0+Math.random()*255);
+            return `rgb(${val1},${val2},${val3})`;
+        }
+        let div=document.querySelectorAll(".box");
+        console.log(div);
+        Array.from(div).forEach(e=>{
+            e.style.backgroundColor=getRandomColor();
+        });
+    </script>
+</body>
+</html>
