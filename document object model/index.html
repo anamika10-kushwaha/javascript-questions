@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container red bg-green">
+        hey i am outer box
+        <div class="box">
+            hey i am inner box
+            <h2 id="hed">hey i am first</h2>
+            <span id="span">helo i am span</span>
+        </div>
+    </div>
+    <script>
+        let div=document.querySelector(".container");
+        console.log(div.hasAttribute("class"));
+        // div.setAttribute("class","cont");
+        console.log(div.getAttribute("class"));
+        let box=document.querySelector(".box");
+        let heading=document.createElement("p");
+        heading.setAttribute("class","para");
+        heading.innerHTML="hey i am inserted <b>by anamika</b> inside the inner div ";
+        // box.append(heading);
+        // box.prepend(heading);
+        // box.after(heading);
+        box.before(heading);
+        let hea=document.querySelector("#hed");
+        let span=document.querySelector("#span");
+        hea.replaceWith(span);
+        span.remove();
+        console.log(div.classList);
+        console.log(div.className);
+        div.classList.toggle("red");
+            </script>
+</body>
+</html>

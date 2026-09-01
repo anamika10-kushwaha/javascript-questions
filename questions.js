@@ -94,3 +94,9 @@ function factorial(number){
     console.log(c);
 }
 factorial(num);
+//question-05-->given 5 boxes. assign random color and random background to each of them.
+let letter=123456789abcdef;
+let one=#;
+for(let i=0;i<6;i++){
+    one+=letter;
+}
