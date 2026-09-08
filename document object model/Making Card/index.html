@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        .card{
+            display:flex;
+            border: 2px solid black;
+            width:800px;
+            padding: 10px;
+            margin: 6px;
+        }
+        .image{
+            position: relative;
+        }
+        .image .capsule{
+            position: absolute;
+            z-index: 10px;
+            bottom: 10px;
+            right: 5px;
+            background-color: black;
+            color: white;
+            opacity: 0.8;
+        }
+        .text{
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+    <script>
+        function CreateCard(title,name,views,monthOld,duration,thumbnail){
+            let viewnumber=views/100+"K";
+            let html=`
+        <div class="card">
+            <div class="image">
+                <img src="${thumbnail}" >
+                <div class="capsule">${duration}</div>
+            </div>
+            <div class="text">
+                <h1>${title}</h1>
+                <p>${name} . ${viewnumber} . views .${monthOld}months ago</p>
+            </div>
+        </div>
+            `;
+            document.querySelector(".container").innerHTML=document.querySelector(".container").innerHTML+html;
+        }
+        CreateCard("introduction to backend | sigma web dev video #2","codewithHarry",56000,7,"31:22","https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACwWOixJVrKLFindK92kYMgTcQbw")
+    </script>
+</body>
+</html>
