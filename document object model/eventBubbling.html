@@ -38,15 +38,56 @@
         let outermost=document.querySelector("#container");
         let outer=document.querySelector("#child-container");
         let inner=document.querySelector("#child");
-        inner.addEventListener("click",()=>{
+        inner.addEventListener("click",(e)=>{
             alert("child was clicked");
+            e.stopPropagation(); // Prevents the event from bubbling up
         });
-        outer.addEventListener("click",()=>{
+        outer.addEventListener("click",(e)=>{
             alert("child-container was clicked");
+            e.stopPropagation(); // Prevents the event from bubbling up
         });
         outermost.addEventListener("click",()=>{
             alert("container was clicked");
         });
+        //setinterval=used to call a function repeatedly after a specified interval of time
+        function getRandomColor(){
+            let val1=Math.ceil(0+Math.random()*255);
+            let val2=Math.ceil(0+Math.random()*255);
+            let val3=Math.ceil(0+Math.random()*255);
+            return `rgb(${val1},${val2},${val3})`;
+        }
+        // let a=setInterval(()=>{
+        //    outermost.style.backgroundColor=getRandomColor();
+        //    inner.style.backgroundColor=getRandomColor();
+        //    outer.style.backgroundColor=getRandomColor();
+        // },1000);
+        // console.log(a);
+        // clearInterval(a);
+        let a=setTimeout(()=>{
+           outermost.style.backgroundColor=getRandomColor();
+           inner.style.backgroundColor=getRandomColor();
+           outer.style.backgroundColor=getRandomColor();
+        },4000);
+        console.log(a);//anfn
+        //callback hell
+        const fn = (args) => {
+        //   alert("newly added");
+          console.log(args);
+        }
+        
+        const callback=(args,fn) => {
+            console.log(args);
+            fn("one");
+        }
+        const loadscript = (src,callback) => {
+          let sc=document.createElement("script");
+          sc.src=src;
+          sc.onload=callback("anamika",fn);
+        //   document.head.append(sc);
+        }
+        loadscript("https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-actionscript.js",callback);
+        // alert('lakhf');
+        // console.log('mfv');
     </script>
 </body>
 </html>

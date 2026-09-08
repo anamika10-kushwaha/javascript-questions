@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promises</title>
+</head>
+<body>
+    <script>
+        // console.log("promises demo!!");
+        // let prom1=new Promise(
+        //     (resolve,reject)=>{
+        //         let a=Math.random();
+        // console.log(a);
+        //         if(a<0.5){
+        //             reject("promise get rejected 1");
+        //         }
+        //         else{
+        //              setTimeout(()=>{
+        //             console.log("dfha  11");
+        //             resolve("done by anamika11");
+        //         },3000);
+        //         }
+        //     }
+        // );
+        // let prom2=new Promise(
+        //     (resolve,reject)=>{
+        //         let a=Math.random();
+        // console.log(a);
+        //         if(a<0.5){
+        //             reject("promise get rejected 2");
+        //         }
+        //         else{
+        //              setTimeout(()=>{
+        //             console.log("dfha  22");
+        //             resolve("done by anamika22");
+        //         },1000);
+        //         }
+        //     }
+        // );
+        // let prom3=new Promise(
+        //     (resolve,reject)=>{
+        //         let a=Math.random();
+        // console.log(a);
+        //         if(a<0.5){
+        //             reject("promise get rejected 3");
+        //         }
+        //         else{
+        //              setTimeout(()=>{
+        //             console.log("dfha  33");
+        //             resolve("done by anamika33");
+        //         },2000);
+        //         }
+        //     }
+        // );
+        // // let p3=Promise.all([prom1,prom2]);
+        // //    let p3=Promise.allSettled([prom1,prom2]);
+        // //    let p3=Promise.race([prom1,prom2]);
+        // let p4=Promise.any([prom1,prom2,prom3]);
+        // p4.then(
+        //     (a)=>{
+        //         console.log(a);
+        //     }
+        // ).catch((err) => {
+        //   console.log(err);
+        // }
+        // )
+        // //example
+        // Promise.reject("success").then(
+        //     (value) => {
+        //       console.log(value);
+        //     }
+        // ).catch((err) => {
+        //   console.log(err);
+          
+        // }
+        // )
+        // prom.then(
+        //     (r) => {
+        //       console.log(r);
+        //     }
+        // ).catch((err) => {
+        //   console.log(err);
+        // }
+        // )
+        //example-02 of promise
+        async function getData(){
+            return new Promise(
+                (resolve,reject) => {
+                  setTimeout(
+                    () => {
+                        console.log('anamika');
+                    resolve("successful");
+                    },3000
+                  )
+                }
+            )
+        }
+        async function main(){
+        console.log("fetching data...........");
+        let  data=await getData();
+        console.log(data);
+        data.then(
+            (value) => {
+             console.log(value); 
+            })
+        // ).catch(
+        //     (err) => {
+        //       console.log(err);
+        //     }
+            
+        // )
+        console.log("dldsfs");
+        }
+        main();
+    </script>
+</body>
+</html>
